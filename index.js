@@ -7,6 +7,7 @@ const path = require('path');
 
 const userRoutes = require('./server/routes/user');
 const gameIdeaRoutes = require('./server/routes/gameIdea');
+const reviewRoutes = require('./server/routes/review'); //Added for Midterm
 
 app.use(express.json());
 
@@ -21,6 +22,7 @@ app.use(express.static(__dirname + "/public"));
 
 app.use('/api/users', userRoutes);
 app.use('/api/games', gameIdeaRoutes);
+app.use('/api/reviews', reviewRoutes); //Added for Midterm
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public', 'index.html')));
 

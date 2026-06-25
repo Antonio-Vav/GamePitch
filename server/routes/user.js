@@ -2,6 +2,17 @@ const express = require('express');
 const router = express.Router();
 const userModel = require('../models/user');
 
+// Route to Login/Verify a User
+router.post('/login', async (req, res) => {
+    try {
+        const { username, password } = req.body;
+        const user = await userModel.loginUser(username, password);
+        res.status(200).json({ message: "Login successful!", user });
+    } catch (err) {
+        res.status(401).json({ error: err.message });
+    }
+});
+
 // 1. CREATE: Route to Register a User
 router.post('/register', async (req, res) => {
     try {

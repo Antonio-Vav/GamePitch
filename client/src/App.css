@@ -1,0 +1,50 @@
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #111115 0%, #1a1a26 100%);
+  color: #f8f9fa;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  padding-bottom: 3rem;
+}
+
+.custom-card {
+  background-color: #22222b !important;
+  border: 1px solid #333346 !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+}
+
+.form-label {
+  color: #a0a0b0;
+  font-size: 0.9rem;
+}
+
+.form-control {
+  background-color: #171721 !important;
+  border: 1px solid #44445c !important;
+  color: #ffffff !important;
+}
+
+/* Blue placeholders for the Login card fields */
+.text-primary ~ form .form-control::placeholder {
+  color: #55aaff !important;
+  opacity: .4 !important;
+}
+
+/* Green placeholders for the Register card fields */
+.text-success ~ form .form-control::placeholder {
+  color: #66ff00 !important;
+  opacity: .3 !important;
+}
+
+.form-control:focus {
+  background-color: #171721 !important;
+  color: #ffffff !important;
+  border-color: #198754 !important;
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25) !important;
+}

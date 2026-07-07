@@ -51,6 +51,16 @@ async function loginUser(username, password) {
     return user;
 }
 
+// Find a user by either Username or Email
+async function getUserByUsernameOrEmail(identifier) {
+    return await User.findOne({
+        $or: [
+            { username: identifier },
+            { email: identifier }
+        ]
+    });
+}
+
 const User = mongoose.model('User', userSchema);
 
-module.exports = { User, createUser, getUserById, updateUser, deleteUser, loginUser };
+module.exports = { User, createUser, getUserById, updateUser, deleteUser, loginUser, getUserByUsernameOrEmail };

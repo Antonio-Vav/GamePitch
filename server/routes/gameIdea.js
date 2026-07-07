@@ -44,4 +44,14 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
+// 5. READ ALL BY USER: Get all game pitches belonging to a specific user
+router.get('/user/:userId', async (req, res) => {
+    try {
+        const pitches = await gameModel.getGameIdeasByUserId(req.params.userId);
+        res.json(pitches);
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
+});
+
 module.exports = router;

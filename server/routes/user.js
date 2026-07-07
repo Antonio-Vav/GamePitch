@@ -55,4 +55,16 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
+// Route to Get a User by Username or Email
+router.get('/search/:identifier', async (req, res) => {
+    try {
+        // 'identifier' can be a username OR an email address
+        const user = await userModel.getUserByUsernameOrEmail(req.params.identifier);
+        if (!user) return res.status(404).json({ message: "User not found" });
+        res.json(user);
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
+});
+
 module.exports = router;

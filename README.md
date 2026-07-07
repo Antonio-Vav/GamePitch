@@ -15,3 +15,26 @@ The main purpose of GamePitch is to solve the "scattered ideas" problem that man
 ## Entity Relationship Diagram (ERD)
 
 ![Entity Relationship Diagram](./public/images/GamePitch_ERD.png)
+
+---
+## Technical Setup Instructions
+
+### Prerequisites:
+Ensure you have Node.js installed on your local machine.
+
+### 1. Clone this Repository
+
+### 2. Create a .env file locally, include this code:
+PORT=3000
+
+dbURL=mongodb+srv://<username>:<password>@cluster0.xxxxxx.mongodb.net/your_database_name
+
+### 3. Install Dependencies:
+Run npm install from root folder.
+
+### 4. Run With npm run dev
+backend will run on http://localhost:3000
+
+the vite dev server will run on http://localhost:5173
+
+### Enjoy, and Happy Pitching!

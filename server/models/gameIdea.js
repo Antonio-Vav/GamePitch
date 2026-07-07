@@ -32,6 +32,11 @@ async function deleteGameIdea(id) {
     return await GameIdea.findByIdAndDelete(id);
 }
 
+// Find all game pitches matching a specific user ID
+async function getGameIdeasByUserId(userId) {
+    return await GameIdea.find({ userId: new mongoose.Types.ObjectId(userId) });
+}
+
 const GameIdea = mongoose.model('GameIdea', gameIdeaSchema);
 
-module.exports = { GameIdea, createGameIdea, getGameIdeaById, updateGameIdea, deleteGameIdea };
+module.exports = { GameIdea, createGameIdea, getGameIdeaById, updateGameIdea, deleteGameIdea, getGameIdeasByUserId };
